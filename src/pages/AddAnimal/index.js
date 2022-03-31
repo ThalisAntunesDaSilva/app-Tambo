@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   View,
   Image,
@@ -8,10 +8,33 @@ import {
   Picker,
 } from "react-native";
 import logoImg from "../../assets/logo.png";
+import api from "../../services/api";
 
 import styles from "./styles";
 
 export default function AddAnimal() {
+
+const [name, setName ] = useState("");
+const [isLoading, setIsLoading] = useState(false);
+
+const onChangeNameHandler = (name) => {
+  setName(name);
+  console.log(name);
+};
+
+
+
+const postAnimal = async (event) => {
+  console.log(name);
+ await api.post(`/vacas/vaca`, {
+   
+      nome: name
+    ,
+  }).then(response => {
+    console.log(response.data)
+  })
+}
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -21,7 +44,13 @@ export default function AddAnimal() {
 
       <View style={styles.body}>
         <Text style={styles.text}>Nome do animal</Text>
-        <TextInput style={styles.input}></TextInput>
+        
+        <TextInput style={styles.input}
+        value={name}
+        onChangeText={onChangeNameHandler}
+        ></TextInput>
+
+        
         <Text style={styles.text}>Idade</Text>
         <TextInput style={styles.input}></TextInput>
         <Text style={styles.text}>Tipo</Text>
@@ -38,7 +67,7 @@ export default function AddAnimal() {
         <View style={styles.picker}>
           <Picker style={() => {}}></Picker>
         </View>
-        <TouchableOpacity onClick={() => {}} style={styles.button}>
+        <TouchableOpacity onPress={() => postAnimal()} style={styles.button}>
       <Text style={styles.textButton}>Ok</Text>
     </TouchableOpacity>
       </View>
