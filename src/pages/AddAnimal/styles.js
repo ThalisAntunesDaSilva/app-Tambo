@@ -31,9 +31,15 @@ export default StyleSheet.create({
     borderRadius: 10,
     height: 40,
     width: 300,
-    borderColor: "#000000",
-    borderWidth: 1,
+    shadowColor: 'rgba(0,0,0, .4)', // IOS
+    shadowOffset: { height: 1, width: 1 }, // IOS
+    shadowOpacity: 1, // IOS
+    shadowRadius: 1, //IOS
+    backgroundColor: '#fff',
+    elevation: 2, // Android
+  
   },
+
   picker: {
     borderRadius: 10,
     height: 40,
@@ -44,7 +50,7 @@ export default StyleSheet.create({
   body: {
     flex: 1,
     flexDirection: "column",
-    paddingTop: 100,
+    paddingTop: 30,
 
     alignItems: "center",
   },

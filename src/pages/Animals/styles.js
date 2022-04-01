@@ -61,7 +61,7 @@ export default StyleSheet.create({
   },
   animalsList:{
     marginTop:20,
-    marginBottom: 50
+    marginBottom: 110
   },
 
   filterList: {

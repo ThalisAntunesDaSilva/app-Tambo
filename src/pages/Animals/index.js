@@ -7,13 +7,20 @@ import {
   TouchableOpacity,
   TextInput,
 } from "react-native";
+import logoImg from "../../assets/logo.png";
 import cowImage from "../../assets/cowImage.jpg";
 import styles from "./styles";
 import { Feather } from "@expo/vector-icons";
 import api from "../../services/api";
+//import { useNavigation } from '@react-navigation/native';
 
 export default function Animals({ navigation }) {
   const [animals, setAnimals] = useState([]);
+  //const navigation = useNavigation();
+ 
+ // function navigateToAnimal(animalId) {
+ //   navigation.navigate('Animal',  animalId );
+ // }
 
   async function loadAnimals() {
     const response = await api
@@ -44,6 +51,10 @@ export default function Animals({ navigation }) {
 
   return (
     <View style={styles.container}>
+         <View style={styles.header}>
+        <Image source={logoImg} />
+        <Text style={styles.headerText}>Lista de animais</Text>
+      </View>
       <View style={styles.header}>
         <Feather
           name="arrow-left"
@@ -108,6 +119,7 @@ export default function Animals({ navigation }) {
                 color="#000000"
               />
             </TouchableOpacity>
+        
           </View>
         )}
       />
