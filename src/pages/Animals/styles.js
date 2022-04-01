@@ -59,6 +59,10 @@ export default StyleSheet.create({
     flexDirection: "row",
     borderRadius: 40,
   },
+  animalsList:{
+    marginTop:20,
+    marginBottom: 50
+  },
 
   filterList: {
     display: "flex",
@@ -98,7 +102,7 @@ export default StyleSheet.create({
   animalBox: {
     marginLeft: 20,
     marginRight: 20,
-    height: 130,
+    height: 170,
     shadowColor: "rgba(0,0,0, .4)", // IOS
     shadowOffset: { height: 1, width: 1 }, // IOS
     shadowOpacity: 1, // IOS
@@ -126,11 +130,23 @@ export default StyleSheet.create({
     height: 90,
     width: 60,
     borderRadius: 5,
+    marginLeft: 10,
+    marginRight: 10,
+  },
+
+  property: {
+
+    marginLeft: 10,
+    marginRight: 15,
+  },
+
+  value:{
+
   },
 
   trashButton: {
     height: 60,
-    width: 90,
+    width: 70,
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
