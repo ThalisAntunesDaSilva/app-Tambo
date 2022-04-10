@@ -1,4 +1,7 @@
 import React from "react";
+
+
+
 import {
   View,
   Image,
@@ -12,9 +15,10 @@ import logoImg from "../../assets/logo.png";
 import header from "../../assets/header.jpg";
 import profile from "../../assets/profile.jpg";
 import cowOption from "../../assets/cowOption.png";
-import moneyOption from "../../assets/moneyOption.png";
+import reproductionOption from "../../assets/reproductionOption.png";
 import graphicOption from "../../assets/graphicOption.png";
 import milkOption from "../../assets/milkOption.png";
+import vaccineOption from "../../assets/vaccineOption.png";
 import styles from "./styles";
 import { useNavigation } from '@react-navigation/native-stack';
 
@@ -38,9 +42,9 @@ export default function Home({navigation}) {
             <Text style={styles.textOption}>Animais</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.buttonOption}>
-            <Image style={styles.iconOption} source={moneyOption}></Image>
-            <Text style={styles.textOption}>Gestão</Text>
+          <TouchableOpacity style={styles.buttonOption} onPress={() => navigation.navigate('Reproductions')}>
+            <Image style={styles.iconOption} source={reproductionOption}></Image>
+            <Text style={styles.textOption}>Reprodução</Text>
           </TouchableOpacity>
         </View>
 
@@ -50,9 +54,9 @@ export default function Home({navigation}) {
             <Text style={styles.textOption}>Produção</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.buttonOption}>
-            <Image style={styles.iconOption} source={graphicOption}></Image>
-            <Text style={styles.textOption}>Estatísticas</Text>
+          <TouchableOpacity style={styles.buttonOption} onPress={() => navigation.navigate('Vaccines')}>
+            <Image style={styles.iconOption} source={vaccineOption}></Image>
+            <Text style={styles.textOption}>Ficha de saúde</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

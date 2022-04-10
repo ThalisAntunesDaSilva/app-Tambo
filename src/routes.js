@@ -7,8 +7,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 import Home from "./pages/Home/index";
-import Animals from "./pages/Animals/index";
-import AddAnimal from "./pages/AddAnimal/index";
+import Animals from "./pages/MenuAnimals/Animals/index";
+import AddAnimal from "./pages/MenuAnimals/AddAnimal/index";
+import Reproductions from './pages/MenuReproduction/Reproductions/index';
+import Vaccines from './pages/MenuVaccine/index';
+//import AddReproduction from './pages/MenuReproduction/AddReproduction/index';
 
 export default function Routes() {
   return (
@@ -17,6 +20,9 @@ export default function Routes() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Animals" component={Animals} />
         <Stack.Screen name="AddAnimal" component={AddAnimal} />  
+        <Stack.Screen name="Reproductions" component={Reproductions} />
+       {/* <Stack.Screen name="AddReproduction" component={AddReproduction} />  */}
+       <Stack.Screen name="Vaccines" component={Vaccines} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,17 +1,17 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   FlatList,
   Image,
   Text,
   TouchableOpacity,
-  TextInput,
+  
 } from "react-native";
-import logoImg from "../../assets/logo.png";
-import cowImage from "../../assets/cowImage.jpg";
+import logoImg from "../../../assets/logo.png";
+import cowImage from "../../../assets/cowImage.jpg";
 import styles from "./styles";
 import { Feather } from "@expo/vector-icons";
-import api from "../../services/api";
+import api from "../../../services/api";
 //import { useNavigation } from '@react-navigation/native';
 
 export default function Animals({ navigation }) {
@@ -121,7 +121,7 @@ export default function Animals({ navigation }) {
             </TouchableOpacity>
         
           </View>
-        )}
+        )} 
       />
     </View>
   );
