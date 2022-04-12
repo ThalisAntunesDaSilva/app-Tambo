@@ -11,12 +11,10 @@ import {
   StatusBar,
 } from "react-native";
 
-import logoImg from "../../assets/logo.png";
-import header from "../../assets/header.jpg";
 import profile from "../../assets/profile.jpg";
 import cowOption from "../../assets/cowOption.png";
+import cowEt from "../../assets/Taken-bro.png"
 import reproductionOption from "../../assets/reproductionOption.png";
-import graphicOption from "../../assets/graphicOption.png";
 import milkOption from "../../assets/milkOption.png";
 import vaccineOption from "../../assets/vaccineOption.png";
 import styles from "./styles";
@@ -26,14 +24,24 @@ export default function Home({navigation}) {
     return (
       
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#0066CC" />
+   
 
       <View style={styles.header}>
-        <View style={styles.profilebox}>
-          <Image style={styles.profile} source={profile}></Image>
-        </View>
-
         <Text style={styles.textWelcome}>Bem-vindo, produtor(a)</Text>
+      </View>
+      <View style={styles.totalBox}>
+        <View style={styles.total}>
+          <Text>Total de animais</Text>
+          <Text style={styles.numberTotal}>30</Text>
+        </View>
+        <View style={styles.total}>
+          <Text>Total de reproduções</Text>
+          <Text style={styles.numberTotal}>30</Text>
+        </View>
+        <View style={styles.total}>
+          <Text>Total de animais vacinados</Text>
+          <Text style={styles.numberTotal}>30</Text>
+        </View>
       </View>
       <ScrollView>
         <View style={styles.options}>
@@ -60,6 +68,7 @@ export default function Home({navigation}) {
           </TouchableOpacity>
         </View>
       </ScrollView>
+  
     </View>
   );
 }

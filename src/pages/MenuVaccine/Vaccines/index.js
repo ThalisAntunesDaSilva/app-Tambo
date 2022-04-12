@@ -1,32 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { View, FlatList, Image, Text, TouchableOpacity } from "react-native";
 import logoImg from "../../../assets/logo.png";
+import cowImage from "../../../assets/cowImage.jpg";
 import styles from "./styles";
 import { Feather } from "@expo/vector-icons";
 import api from "../../../services/api";
-import Icon from 'react-native-vector-icons/FontAwesome';
-import moment from "moment";
+//import { useNavigation } from '@react-navigation/native';
 
-
-export default function Reproductions({ navigation }) {
-  const [reproductions, setReproductions] = useState([]);
+function Vaccines({ navigation }) {
+  const [vaccines, setVaccines] = useState([]);
   //const navigation = useNavigation();
 
   // function navigateToAnimal(animalId) {
   //   navigation.navigate('Animal',  animalId );
   // }
 
-  async function loadReproductions() {
+  async function loadVaccines() {
     const response = await api
-      .get("reproducoes")
-      .then(console.log("LISTANDO REPRODUÇÕES"))
+      .get("saudes")
+      .then(console.log("LISTANDO FICHAS DE SAÚDE"))
       .catch((err) => console.log(err));
-    setReproductions(response.data);
+    setVaccines(response.data);
   }
 
   async function deleteAnimal(id) {
     await api
-      .delete("animais/animal", {
+      .delete("saudes/saude", {
         data: {
           id: id,
         },
@@ -40,14 +39,14 @@ export default function Reproductions({ navigation }) {
   }
 
   useEffect(() => {
-    loadReproductions();
+    loadVaccines();
   }, []);
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Image source={logoImg} />
-        <Text style={styles.headerText}>Lista de reproduções</Text>
+        <Text style={styles.headerText}>Lista de fichas</Text>
       </View>
       <View style={styles.header}>
         <Feather
@@ -58,43 +57,39 @@ export default function Reproductions({ navigation }) {
         />
         <TouchableOpacity
           style={styles.buttonAdd}
-          onPress={() => navigation.navigate("AddReproductions")}
+          onPress={() => navigation.navigate("AddAnimal")}
         >
           <Text style={styles.textButton}>Novo +</Text>
         </TouchableOpacity>
       </View>
       {/*  <View style={styles.searchBox}>
-        <TextInput style={styles.inputSearch}>
-         
-          <Feather name="search" size={15} color="#000000" onPress={() => {}} />
-        </TextInput>
-  </View> */}
+   <TextInput style={styles.inputSearch}>
+    
+     <Feather name="search" size={15} color="#000000" onPress={() => {}} />
+   </TextInput>
+</View> */}
 
       <FlatList
-        data={reproductions}
+        data={vaccines}
         style={styles.animalsList}
         keyExtractor={(item, index) => String(item.id)}
         showsVerticalScrollIndicator={false}
         renderItem={({ item, index }) => (
           <View style={styles.animalBox}>
-   
             <View style={styles.property}>
               <Text style={styles.vacaProperty}>ID:</Text>
-              <Text style={styles.vacaProperty}>Data de início:</Text>
-              <Text style={styles.vacaProperty}>Data de fim:</Text>
-              <Text style={styles.vacaProperty}>Nome da mãe:</Text>
+              <Text style={styles.vacaProperty}>Nome do animal:</Text>
+              <Text style={styles.vacaProperty}>Vacina:</Text>
             </View>
             <View style={styles.value}>
-            <Text style={styles.vacaValue}>{item.id}</Text>
-            <Text style={styles.vacaValue}>{moment(item.dataDeInicio).format("DD-MM-YYYY")}</Text>
-            <Text style={styles.vacaValue}>{moment(item.dataDeFim).format("DD-MM-YYYY")}</Text>
-            <Text style={styles.vacaValue}>{item.mae.nome}</Text>
-              
+              <Text style={styles.vacaValue}>{item.id}</Text>
+              <Text style={styles.vacaValue}>{item.animal.nome}</Text>
+              <Text style={styles.vacaValue}>{item.vacina}</Text>
             </View>
 
             <TouchableOpacity
               style={styles.trashButton}
-              onPress={() => {}}
+              onPress={() => deleteAnimal(item.id)}
               hitSlop={{ top: 30, bottom: 30, left: 30, right: 30 }}
             >
               <Feather
@@ -110,3 +105,5 @@ export default function Reproductions({ navigation }) {
     </View>
   );
 }
+
+export default Vaccines;

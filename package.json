@@ -16,12 +16,18 @@
     "expo": "~44.0.2",
     "expo-splash-screen": "~0.14.1",
     "expo-status-bar": "~1.2.0",
+    "moment": "^2.29.2",
+    "moment-timezone": "^0.5.34",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "^4.3.1",
+    "react-moment": "^1.1.2",
     "react-native": "0.64.3",
+    "react-native-date-picker": "^4.2.0",
+    "react-native-datefield": "^0.3.5",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
+    "react-native-vector-icons": "^9.1.0",
     "react-native-web": "0.17.1"
   },
   "devDependencies": {

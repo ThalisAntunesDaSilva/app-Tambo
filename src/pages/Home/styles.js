@@ -9,16 +9,44 @@ container:{
     margin: 0},
 
 header: {
-    height: 170,
-    paddingTop: 20,
+    height: 150,
     paddingRight: 20,
     paddingLeft: 20,
+},
+
+totalBox: {
+    marginTop: -60,
+    marginBottom: 50,
+    backgroundColor: 'white',
+    height:140,
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent:'space-evenly',
+    
+
+},
+
+total : {
+  
+    height: 120,
+    width: 120,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+   
+},
+
+numberTotal:{
+    fontSize:60,
 },
 
 profilebox: {
     display: 'flex',
     alignItems: 'flex-end',
     marginBottom: 30,
+    backgroundColor: 'red'
 },
 
     textWelcome: {
@@ -67,6 +95,13 @@ buttonOption: {
 iconOption : {
     height: 60,
     width: 60},
+
+    cowImage : {
+    height: 200,
+    width: 200,
+    marginLeft: -50,
+
+    }
 
 
 
