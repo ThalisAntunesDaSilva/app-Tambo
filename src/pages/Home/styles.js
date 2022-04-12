@@ -1,116 +1,109 @@
-import { StyleSheet } from 'react-native';
-import Constants from 'expo-constants';
-
+import { StyleSheet } from "react-native";
+import Constants from "expo-constants";
 
 export default StyleSheet.create({
-
-container:{
+  container: {
     paddingTop: Constants.statusBarHeight,
-    margin: 0},
+    margin: 0,
+  },
 
-header: {
+  header: {
     height: 150,
-    paddingRight: 20,
+    paddingRight: -20,
     paddingLeft: 20,
-},
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
 
-totalBox: {
+  totalBox: {
     marginTop: -60,
     marginBottom: 50,
-    backgroundColor: 'white',
-    height:140,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent:'space-evenly',
-    
+    backgroundColor: "white",
+    height: 140,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+  },
 
-},
-
-total : {
-  
+  total: {
     height: 120,
     width: 120,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-   
-},
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
 
-numberTotal:{
-    fontSize:60,
-},
+  numberTotal: {
+    fontSize: 60,
+  },
 
-profilebox: {
-    display: 'flex',
-    alignItems: 'flex-end',
+  profilebox: {
+    display: "flex",
+    alignItems: "flex-end",
     marginBottom: 30,
-    backgroundColor: 'red'
-},
+    backgroundColor: "red",
+  },
 
-    textWelcome: {
-        fontSize: 20,
-        fontWeight: 'bold',
-    },
+  textWelcome: {
+    fontSize: 20,
+    marginTop: -30,
+    fontWeight: "bold",
+  },
 
-profile: {
+  profile: {
     height: 60,
     width: 60,
     borderRadius: 100,
-   
-    
-},
+  },
 
-   
-options : {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-around',
-        flexDirection: 'row',
+  options: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-around",
+    flexDirection: "row",
     marginTop: 15,
-marginBottom: 15,
-},
-     
-buttonOption: {
-    shadowColor: 'rgba(0,0,0, .4)', // IOS
+    marginBottom: 15,
+  },
+
+  buttonOption: {
+    shadowColor: "rgba(0,0,0, .4)", // IOS
     shadowOffset: { height: 1, width: 1 }, // IOS
     shadowOpacity: 1, // IOS
     shadowRadius: 1, //IOS
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     elevation: 2, // Android
     height: 50,
     width: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
     height: 150,
     width: 140,
     borderRadius: 10,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column'},
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+  },
 
-iconOption : {
+  iconOption: {
     height: 60,
-    width: 60},
+    width: 60,
+  },
 
-    cowImage : {
+  imageDecoration: {
+    height: 90,
+    width: 90,
+    marginTop: -30,
+  },
+
+  cowImage: {
     height: 200,
     width: 200,
     marginLeft: -50,
-
-    }
-
-
-
-
-
-
-    
+  },
 });
-
-
-
-

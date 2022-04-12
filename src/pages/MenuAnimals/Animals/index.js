@@ -16,6 +16,11 @@ import api from "../../../services/api";
 
 export default function Animals({ navigation }) {
   const [animals, setAnimals] = useState([]);
+
+ 
+
+  
+
   //const navigation = useNavigation();
  
  // function navigateToAnimal(animalId) {
@@ -44,16 +49,21 @@ export default function Animals({ navigation }) {
       })
       .catch((err) => console.log(err));
   }
+ 
 
   useEffect(() => {
     loadAnimals();
   }, []);
+
+
+ 
 
   return (
     <View style={styles.container}>
          <View style={styles.header}>
         <Image source={logoImg} />
         <Text style={styles.headerText}>Lista de animais</Text>
+      
       </View>
       <View style={styles.header}>
         <Feather
